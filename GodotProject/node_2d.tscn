@@ -1,0 +1,214 @@
+[gd_scene load_steps=2 format=3 uid="uid://dciv5fggd6qpa"]
+
+[ext_resource type="Script" uid="uid://csnxhfos8p2d3" path="res://Scripts/main.gd" id="1_wtcfe"]
+
+[node name="ClientUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wtcfe")
+
+[node name="AuthPanel" type="Panel" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="AuthPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AuthBox" type="VBoxContainer" parent="AuthPanel/CenterContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="AuthPanel/CenterContainer/AuthBox"]
+layout_mode = 2
+text = "Добро пожаловать!"
+horizontal_alignment = 1
+
+[node name="FormContainer" type="VBoxContainer" parent="AuthPanel/CenterContainer/AuthBox"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="UsernameInput" type="LineEdit" parent="AuthPanel/CenterContainer/AuthBox/FormContainer"]
+layout_mode = 2
+placeholder_text = "Логин"
+
+[node name="PasswordInput" type="LineEdit" parent="AuthPanel/CenterContainer/AuthBox/FormContainer"]
+layout_mode = 2
+placeholder_text = "Пароль"
+secret = true
+
+[node name="ButtonContainer" type="HBoxContainer" parent="AuthPanel/CenterContainer/AuthBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="LoginButton" type="Button" parent="AuthPanel/CenterContainer/AuthBox/ButtonContainer"]
+layout_mode = 2
+text = "Вход"
+
+[node name="RegisterButton" type="Button" parent="AuthPanel/CenterContainer/AuthBox/ButtonContainer"]
+layout_mode = 2
+text = "Регистрация"
+
+[node name="StatusText" type="Label" parent="AuthPanel/CenterContainer/AuthBox"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="MainPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MainPanel/MarginContainer"]
+layout_mode = 2
+split_offset = 300
+
+[node name="LeftPanel" type="Panel" parent="MainPanel/MarginContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/MarginContainer/HSplitContainer/LeftPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="UserContainer" type="Panel" parent="MainPanel/MarginContainer/HSplitContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="UserList" type="ItemList" parent="MainPanel/MarginContainer/HSplitContainer/LeftPanel/VBoxContainer/UserContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 37.0
+offset_bottom = 646.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatusContainer" type="Panel" parent="MainPanel/MarginContainer/HSplitContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="MainPanel/MarginContainer/HSplitContainer/LeftPanel/VBoxContainer/StatusContainer"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 614.0
+offset_right = 124.0
+offset_bottom = 637.0
+
+[node name="Search" type="LineEdit" parent="MainPanel/MarginContainer/HSplitContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="RightPanel" type="Panel" parent="MainPanel/MarginContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MainPanel/MarginContainer/HSplitContainer/RightPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MessageContainer" type="Panel" parent="MainPanel/MarginContainer/HSplitContainer/RightPanel/VBoxContainer2"]
+layout_mode = 2
+
+[node name="ChatDisplay" type="RichTextLabel" parent="MainPanel/MarginContainer/HSplitContainer/RightPanel/VBoxContainer2/MessageContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 618.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+scroll_following = true
+
+[node name="InputContainer" type="Panel" parent="MainPanel/MarginContainer/HSplitContainer/RightPanel/VBoxContainer2"]
+layout_mode = 2
+
+[node name="MessageInput" type="LineEdit" parent="MainPanel/MarginContainer/HSplitContainer/RightPanel/VBoxContainer2/InputContainer"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 5.0
+offset_top = 613.0
+offset_right = -2.0
+offset_bottom = 644.0
+grow_horizontal = 2
+placeholder_text = "Введите сообщение..."
+
+[node name="CallButton" type="Button" parent="MainPanel/MarginContainer/HSplitContainer/RightPanel"]
+layout_mode = 2
+offset_left = 540.0
+offset_top = 4.0
+offset_right = 840.0
+offset_bottom = 35.0
+text = "Позвонить"
+
+[node name="CallPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1154.0
+offset_bottom = 3.0
+grow_vertical = 2
+
+[node name="CallControls" type="HBoxContainer" parent="CallPanel"]
+layout_mode = 0
+alignment = 1
+
+[node name="CallStatus" type="Label" parent="CallPanel/CallControls"]
+layout_mode = 2
+text = "Идет звонок..."
+
+[node name="HangupButton" type="Button" parent="CallPanel/CallControls"]
+layout_mode = 2
+text = "Завершить"
+
+[node name="IncomingCallPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 575.0
+offset_bottom = 327.0
+
+[node name="CallerInfo" type="VBoxContainer" parent="IncomingCallPanel"]
+layout_mode = 0
+alignment = 1
+
+[node name="CallerLabel" type="Label" parent="IncomingCallPanel/CallerInfo"]
+layout_mode = 2
+text = "Входящий звонок"
+
+[node name="CallButtons" type="HBoxContainer" parent="IncomingCallPanel/CallerInfo"]
+layout_mode = 2
+alignment = 1
+
+[node name="AcceptButton" type="Button" parent="IncomingCallPanel/CallerInfo/CallButtons"]
+layout_mode = 2
+text = "Принять"
+
+[node name="RejectButton" type="Button" parent="IncomingCallPanel/CallerInfo/CallButtons"]
+layout_mode = 2
+text = "Отклонить"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
